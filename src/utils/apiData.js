@@ -4,7 +4,22 @@ const API_URLS = {
     API_FEMALE_ACTORS_URL: "https://lanciweb.github.io/demo/api/actresses/"
 }   
 
-export default API_URLS
+function fetchActors() {
+
+    const maleActors = fetch(API_URLS.API_MALE_ACTORS_URL)
+    .then (result => result.json());
+    const femaleActors = fetch(API_URLS.API_FEMALE_ACTORS_URL)
+    .then (result => result.json());
+
+    return [maleActors, femaleActors];
+
+}
+
+
+
+export {
+    fetchActors
+}
 
 
 // Idea di cosa voglio fare:
