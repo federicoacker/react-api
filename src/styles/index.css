@@ -10,3 +10,34 @@
   componenti. Per stili specifici di un singolo componente è preferibile
   usare un CSS Module (es. `NomeComponente.module.css`).
 */
+body{
+  background-color: var(--bs-secondary)
+}
+.actor-image{
+  height: 400px;
+  object-fit: cover;
+  object-position: 50% 25%;
+}
+
+.actor-name{
+  text-wrap-mode: nowrap;
+}
+.actor-card{
+  position:relative;
+  --bs-border-color: var(--bs-danger);
+}
+.accordion-item{
+  position:relative;
+  --bs-accordion-active-bg: var(--bs-danger);
+  --bs-accordion-border-color: var(--bs-danger);
+}
+.accordion-collapse{
+  background-color: var(--bs-accordion-bg);
+  border: 1px solid var(--bs-danger);
+  position:absolute;
+  z-index:5;
+}
+
+hr {
+  color:var(--bs-danger);
+}

@@ -4,6 +4,7 @@ function ActorList({actorArray}) {
   return (
     actorArray.map(actor => <Actor
         key={ actor.id }
+        id={actor.id}
         name={ actor.name}
         birthYear={ actor.birth_year }
         deathYear={ actor.death_year }
