@@ -6,7 +6,6 @@ import { initActors } from "./utils/apiData.js";
 
 function App() {
   const [actorArray, setActorArray] = useState([]);
-
   console.log(actorArray);
 
   useEffect(
@@ -26,7 +25,7 @@ function App() {
   return (
     <>
       <Header />
-      <Main />
+      <Main actorArray={ actorArray }/>
     </>
   );
 }
