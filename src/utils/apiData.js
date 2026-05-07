@@ -16,7 +16,7 @@ function fetchActors() {
 }
 
 function initActors() {
-    Promise.all(fetchActors()).then(
+    const unifiedActorsPromise= Promise.all(fetchActors()).then(
         values => {
             const maleSanitizedActors = mapActors(values[0]);
             const femaleSanitizedActors = mapActors(values[1]);
@@ -35,7 +35,9 @@ function initActors() {
 
             return unifiedActorArray;
         }
-    ).catch();
+    )
+
+    return unifiedActorsPromise;
 }
 
 function mapActors(actorArray){

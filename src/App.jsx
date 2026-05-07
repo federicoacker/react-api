@@ -7,16 +7,26 @@ import { initActors } from "./utils/apiData.js";
 function App() {
   const [actorArray, setActorArray] = useState([]);
 
-  useEffect(() => {
-    initActors();
-  }
+  console.log(actorArray);
 
-  );
+  useEffect(
+    () => {
+      initActors().then(
+        unifiedActorArray => {
+          setActorArray(unifiedActorArray);
+        }
+      ).catch(
+        error => {
+          console.log(error);
+        }
+      );
+    },
+    []);
 
   return (
     <>
-    <Header/>
-    <Main/>
+      <Header />
+      <Main />
     </>
   );
 }
