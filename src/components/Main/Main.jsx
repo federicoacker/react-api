@@ -1,7 +1,12 @@
+import { Container, Row } from "react-bootstrap"
 
 function Main() {
   return (
-    <div>Main</div>
+    <Container>
+        <Row>
+            
+        </Row>
+    </Container>
   )
 }
 
