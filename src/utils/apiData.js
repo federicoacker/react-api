@@ -15,10 +15,44 @@ function fetchActors() {
 
 }
 
+function initActors() {
+    Promise.all(fetchActors()).then(
+        values => {
+            const maleSanitizedActors = mapActors(values[0]);
+            const femaleSanitizedActors = mapActors(values[1]);
 
+            const unifiedActorArray = [...maleSanitizedActors, ...femaleSanitizedActors].sort((a,b) => {
+                if(a.name > b.name){
+                    return 1;
+                }
+                else if (a.name < b.name){
+                    return -1;
+                }
+                else{
+                    return 0;
+                }
+            })
+
+            return unifiedActorArray;
+        }
+    ).catch();
+}
+
+function mapActors(actorArray){
+    const mappedActors = actorArray.map(actor => {
+        return (
+            {
+                death_year:null,
+                ...actor,
+                id:crypto.randomUUID()
+            }
+        )
+    });
+    return mappedActors;
+}
 
 export {
-    fetchActors
+    initActors
 }
 
 
