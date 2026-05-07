@@ -6,8 +6,11 @@ import { initActors } from "./utils/apiData.js";
 
 function App() {
   const [actorArray, setActorArray] = useState([]);
+  const [loadingError, setLoadingError] = useState({
+    errorState: false,
+    errorMessage: ""
+  });
   console.log(actorArray);
-
   useEffect(
     () => {
       initActors().then(
@@ -16,7 +19,8 @@ function App() {
         }
       ).catch(
         error => {
-          console.log(error);
+          console.error(error);
+          setLoadingError({errorState:true, errorMessage:error.message});
         }
       );
     },
@@ -25,7 +29,7 @@ function App() {
   return (
     <>
       <Header />
-      <Main actorArray={ actorArray }/>
+      <Main actorArray={ actorArray } loadingError={ loadingError }/>
     </>
   );
 }

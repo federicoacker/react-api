@@ -1,7 +1,18 @@
+import Actor from "./Actor"
 
-function ActorList() {
+function ActorList({actorArray}) {
   return (
-    <div>ActorList</div>
+    actorArray.map(actor => <Actor
+        key={ actor.id }
+        name={ actor.name}
+        birthYear={ actor.birth_year }
+        deathYear={ actor.death_year }
+        nationality={ actor.nationality }
+        biography={ actor.biography }
+        image={ actor.image }
+        awards={ actor.awards }
+        knownFor={ actor.known_for }
+    />)
   )
 }
 
