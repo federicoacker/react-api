@@ -52,7 +52,7 @@ function Actor({
                 }
             </div>
         </Col>
-    )
+    );
 }
 
 export default Actor

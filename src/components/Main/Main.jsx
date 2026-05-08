@@ -6,7 +6,7 @@ function Main({ actorArray, loadingError }) {
         <main>
             <Container>
                 <Row className="row-gap-4">
-                    {loadingError.errorState && <h1>{loadingError.errorMessage}</h1>}
+                    {loadingError.errorState && <h2>{loadingError.errorMessage}</h2>}
                     {(actorArray.length !== 0 && !loadingError.errorState) && <ActorList actorArray={actorArray} />}
                 </Row>
             </Container>

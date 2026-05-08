@@ -2,7 +2,7 @@
 const API_URLS = {
     API_MALE_ACTORS_URL: "https://lanciweb.github.io/demo/api/actors/",
     API_FEMALE_ACTORS_URL: "https://lanciweb.github.io/demo/api/actresses/"
-}   
+};   
 
 function fetchActors() {
 
@@ -31,7 +31,7 @@ function initActors() {
                 else{
                     return 0;
                 }
-            })
+            });
 
             return unifiedActorArray;
         }
@@ -48,7 +48,7 @@ function mapActors(actorArray){
                 ...actor,
                 id:crypto.randomUUID()
             }
-        )
+        );
     });
     return mappedActors;
 }
@@ -62,8 +62,8 @@ export {
 /**
  * 1 useEffect nell'app.jsx fara i 2 fetch alle due API al mount di APP.jsx.
  * 2 le 2 promise verranno messe in un array di promise.
- * 3 il faccio promise.all(arrayDiPromise)
- * 4 invoco .then sul promise.all (che è restituisce una promise)
+ * 3 faccio promise.all(arrayDiPromise)
+ * 4 invoco .then sul promise.all (che restituisce una promise)
  * 5 in questo .then dovrò fare 2 cose.
  *      i. Creare degli oggetti normalizzati che contengano i dati dell' api 
  *      (quindi avere una funzione a cui darò l'array di oggetti degli attori e li normalizza e 

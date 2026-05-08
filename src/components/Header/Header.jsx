@@ -7,7 +7,7 @@ function Header() {
                 <h1 className="text-center text-white mx-auto">Your favourite Actors</h1>
             </Container>
         </header>
-    )
+    );
 }
 
 export default Header

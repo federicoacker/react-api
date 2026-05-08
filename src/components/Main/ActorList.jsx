@@ -14,7 +14,7 @@ function ActorList({actorArray}) {
         awards={ actor.awards }
         knownFor={ actor.known_for }
     />)
-  )
+  );
 }
 
 export default ActorList
