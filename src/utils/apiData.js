@@ -46,7 +46,7 @@ function mapActors(actorArray){
             {
                 death_year:null,
                 ...actor,
-                id:crypto.randomUUID()
+                keyId:crypto.randomUUID()
             }
         );
     });

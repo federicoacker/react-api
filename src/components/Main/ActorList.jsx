@@ -3,8 +3,8 @@ import Actor from "./Actor"
 function ActorList({actorArray}) {
   return (
     actorArray.map(actor => <Actor
-        key={ actor.id }
-        id={ actor.id }
+        key={ actor.keyId }
+        id={ actor.keyId }
         name={ actor.name }
         birthYear={ actor.birth_year }
         deathYear={ actor.death_year }
