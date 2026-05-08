@@ -18,8 +18,8 @@ function fetchActors() {
 function initActors() {
     const unifiedActorsPromise= Promise.all(fetchActors()).then(
         values => {
-            const maleSanitizedActors = mapActors(values[0]);
-            const femaleSanitizedActors = mapActors(values[1]);
+            const maleSanitizedActors = mapActors(values[0], "male");
+            const femaleSanitizedActors = mapActors(values[1], "female");
 
             const unifiedActorArray = [...maleSanitizedActors, ...femaleSanitizedActors].sort((a,b) => {
                 if(a.name > b.name){
@@ -40,13 +40,14 @@ function initActors() {
     return unifiedActorsPromise;
 }
 
-function mapActors(actorArray){
+function mapActors(actorArray, gender){
     const mappedActors = actorArray.map(actor => {
         return (
             {
                 death_year:null,
                 ...actor,
-                keyId:crypto.randomUUID()
+                keyId:crypto.randomUUID(),
+                gender
             }
         );
     });

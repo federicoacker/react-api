@@ -10,7 +10,7 @@ function App() {
     errorState: false,
     errorMessage: ""
   });
-
+  console.log(actorArray);
   useEffect(
     () => {
       initActors().then(
